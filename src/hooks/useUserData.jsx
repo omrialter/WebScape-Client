@@ -4,10 +4,18 @@ import { TOKEN_KEY, URL, doApiGet } from "../services/apiService";
 export const useUserData = () => {
 
   const [userData, setUserData] = useState({});
+
+
   const doApiUser = async () => {
-    const url = URL + "/users/userInfo";
-    const data = await doApiGet(url);
-    setUserData(data);
+
+    try {
+      const url = URL + "/users/userInfo";
+      const data = await doApiGet(url);
+      setUserData(data);
+
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {

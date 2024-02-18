@@ -1,15 +1,26 @@
 import React from 'react'
-import { toast } from 'react-toastify';
+import Stories from "../components/home/Stories"
+
 
 function Home() {
 
-    const notify = () => toast.info("Wow so easy!");
+
 
     return (
-        <div className='text-center'>
-            <header >Home</header>
-            <button onClick={notify}>click me</button>
-        </div>
+        <main>
+            <section>
+                <Stories />
+                {/* posts */}
+            </section>
+
+
+            <section>
+                {/* miniProfile */}
+                {/* suggestions */}
+
+            </section>
+
+        </main>
 
     )
 }
