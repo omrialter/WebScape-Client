@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Router from "../src/routes/Router";
 import { MyContext } from "../src/context/myContext";
 import { useUserData } from "../src/hooks/useUserData";
@@ -9,12 +8,12 @@ import './App.css'
 function App() {
 
   const { userData, setUserData, userSignOut } = useUserData();
-  const [loading, setIsLoading] = useState(false);
+
   return (
     <MyContext.Provider value={{
-      userData, setUserData, userSignOut, loading
+      userData, setUserData, userSignOut
     }}>
-      {loading && <LoadingPage />}
+
       <Router />
       <ToastContainer theme='colored' />
 
