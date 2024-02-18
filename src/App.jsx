@@ -9,10 +9,12 @@ import './App.css'
 function App() {
 
   const { userData, setUserData, userSignOut } = useUserData();
+  const [loading, setIsLoading] = useState(false);
   return (
     <MyContext.Provider value={{
-      userData, setUserData, userSignOut
+      userData, setUserData, userSignOut, loading
     }}>
+      {loading && <LoadingPage />}
       <Router />
       <ToastContainer theme='colored' />
 
